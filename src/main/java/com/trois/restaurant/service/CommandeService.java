@@ -18,6 +18,7 @@ public class CommandeService {
         private PlatService platService;
 
         public List<Commande> findAll() {return this.commandeRepository.findAll();}
+        public Commande findById(Long id) {return this.commandeRepository.findById(id).orElse(null);}
 
         public Commande createCommande(CommandeDTO plats) {
                Commande commande = new Commande();

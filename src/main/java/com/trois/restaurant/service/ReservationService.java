@@ -15,7 +15,7 @@ import java.util.List;
 public class ReservationService implements DAOServiceInterface<Reservation> {
 
     private ReservationRepository reservationRepository;
-    //private CommandeService commandeService;
+    private CommandeService commandeService;
 
     @Override
     public List<Reservation> findAll() {
@@ -35,7 +35,7 @@ public class ReservationService implements DAOServiceInterface<Reservation> {
     public Reservation create(DTOReservation reservationDto) {
         Reservation reservation = new Reservation();
 
-        //reservation.setCommande(commandeService.findById(reservationDto.getCommandeId()));
+        reservation.setCommande(commandeService.findById(reservationDto.getCommandeId()));
         reservation.setNom(reservationDto.getNom());
         reservation.setNbPersonne(reservationDto.getNbPersonne());
         reservation.setDate(reservationDto.getDate());
