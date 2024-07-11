@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>restaurant</name>
-	<description>Exam SpringBoot POEC 2024 de kevin</description>
+	<description>API basique pour restaurant</description>
 	<properties>
 		<java.version>20</java.version>
 	</properties>
