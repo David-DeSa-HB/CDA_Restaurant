@@ -30,4 +30,8 @@ public class PlatService {
         plat.setId(id);
         return platRepository.saveAndFlush(plat);
     }
+
+    public Plat findByNom(String nom){
+        return platRepository.findByNom(nom).orElseThrow(EntityNotFoundException::new);
+    }
 }

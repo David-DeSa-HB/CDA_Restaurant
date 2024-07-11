@@ -11,4 +11,5 @@ public interface PlatRepository extends JpaRepository<Plat, Long> {
 
     Optional<Plat> findById(Long id);
 
+    Optional<Plat> findByNom(String nom);
 }

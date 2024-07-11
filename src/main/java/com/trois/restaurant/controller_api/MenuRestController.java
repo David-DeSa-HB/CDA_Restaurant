@@ -23,8 +23,8 @@ public class MenuRestController {
     }
 
     @PutMapping
-    public Menu addOrRemovePlat(@RequestBody Plat plat, Long id){
-        return menuService.addOrRemovePlat(plat,id);
+    public Menu addOrRemovePlat(@RequestBody Long platId, Long id){
+        return menuService.addOrRemovePlat(platId,id);
     }
 
 }

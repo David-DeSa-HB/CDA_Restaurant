@@ -30,9 +30,10 @@ public class MenuService {
         return menuRepository.saveAndFlush(menu);
     }
 
-    public Menu addOrRemovePlat(Plat plat, Long id){
+    public Menu addOrRemovePlat(Long platId, Long id){
         Menu menu = menuRepository.findById(id).orElseThrow(EntityNotFoundException::new);
         List<Plat> plats = menu.getPlats();
+        Plat plat = platService.findById(platId);
         if(plats.contains(plat)){
             System.out.println("Insertion");
             plats.remove(plat);
