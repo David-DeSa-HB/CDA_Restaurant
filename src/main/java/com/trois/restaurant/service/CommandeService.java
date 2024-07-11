@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class CommandeService {
         private CommandeRepository commandeRepository;
-        //private PlatService platService;
+        private PlatService platService;
 
         public List<Commande> findAll() {return this.commandeRepository.findAll();}
 
@@ -23,7 +23,7 @@ public class CommandeService {
                Commande commande = new Commande();
 
                for (Long plat : plats.getPlat()) {
-                      //commande.addPlat(platService.findById(plat));
+                      commande.addPlat(platService.findById(plat));
                }
                commande.setStatus("En cours");
 
