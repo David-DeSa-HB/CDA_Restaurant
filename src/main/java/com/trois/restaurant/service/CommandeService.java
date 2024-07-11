@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class CommandeService {
         private CommandeRepository commandeRepository;
         private PlatService platService;
 
-        public List<Commande> findAll() {return this.commandeRepository.findAll();}
+        public List<Commande> findAllByDate(LocalDate date) {return this.commandeRepository.findByDate(date);}
 
         public Commande createCommande(CommandeDTO plats) {
                Commande commande = new Commande();
@@ -26,6 +28,7 @@ public class CommandeService {
                       commande.addPlat(platService.findById(plat));
                }
                commande.setStatus("En cours");
+               commande.setDate(plats.getDate());
 
                return commandeRepository.saveAndFlush(commande);
         }

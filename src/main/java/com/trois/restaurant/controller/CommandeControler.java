@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -18,9 +19,9 @@ public class CommandeControler {
 
     private CommandeService commandeService;
 
-    @GetMapping
-    public List<Commande> index() {
-        return commandeService.findAll();
+    @GetMapping("/{date}")
+    public List<Commande> index(@PathVariable String date) {
+        return commandeService.findAllByDate(LocalDate.parse(date));
     }
 
     @PostMapping
