@@ -1,13 +1,14 @@
 package com.trois.restaurant.service;
 
 
-import DTO.DTOReservation;
+import com.trois.restaurant.DTO.DTOReservation;
+import com.trois.restaurant.DTO.DTOReservationDate;
 import com.trois.restaurant.entity.Reservation;
 import com.trois.restaurant.repository.ReservationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -20,6 +21,10 @@ public class ReservationService implements DAOServiceInterface<Reservation> {
     @Override
     public List<Reservation> findAll() {
         return reservationRepository.findAll();
+    }
+
+    public List<Reservation> findAllByDate(LocalDate ld) {
+        return reservationRepository.findByDate(ld);
     }
 
     @Override

@@ -1,8 +1,6 @@
-package DTO;
+package com.trois.restaurant.DTO;
 
 
-import com.trois.restaurant.entity.Commande;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -10,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +22,7 @@ public class DTOReservation {
     @Size(message = "The name must have at least 5 characters", min = 5)
     private String nom;
 
-    private Date date;
+    private LocalDate date;
 
     private int nbPersonne;
 
