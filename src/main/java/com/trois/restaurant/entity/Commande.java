@@ -19,6 +19,7 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany
     private List<Plat> plats;
 
     private String status;

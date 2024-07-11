@@ -23,8 +23,7 @@ public class Reservation {
     @ManyToOne
     private Commande commande;
 
-    @ManyToOne
-    private Utilisateur utilisateur;
+    private String nom;
 
     private Date date;
 

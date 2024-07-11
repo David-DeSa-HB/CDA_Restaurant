@@ -1,4 +1,4 @@
-package fr.kevin.exam.service;
+package com.trois.restaurant.service;
 
 import java.util.List;
 
